@@ -45,7 +45,11 @@ class Slime(pygame.sprite.Sprite):
         self.change_x = change_x
         self.change_y = change_y
         # Load image
-        self.image = pygame.image.load("slime.png").convert_alpha()
+        choice_of_slime = int(random.randint(0, 1))
+        if choice_of_slime == 0:
+            self.image = pygame.image.load("slime_m.png").convert_alpha()
+        else:
+            self.image = pygame.image.load("slime_p.png").convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.topleft = (x,y)
 
